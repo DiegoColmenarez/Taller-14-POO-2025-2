@@ -2,12 +2,16 @@ package ejercicio1;
 
 public class Circulo  extends Figuras {
    protected double radio;
-   public Circulo(Double radio){
+   private double validacion(Double radio){
        if (!(radio > 0)){
-           throw new IllegalArgumentException("No pueden haber numeros negativos");
+           throw new IllegalArgumentException("Ingrese valores mayores que 0");
        }else{
            this.radio = radio;
        }
+       return radio;
+   }
+   public Circulo(Double radio){
+      this.radio = validacion(radio);
 
    }
     @Override
